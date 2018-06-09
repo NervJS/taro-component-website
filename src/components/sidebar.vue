@@ -1,7 +1,7 @@
 <template>
   <div class="at-sidebar col-sm-24 col-md-6 col-lg-4">
     <nav class="at-nav">
-      <div v-for="item in data" :key="item.name">
+      <div v-for="(item,index) in data" :key="index">
         <h2 class="at-nav__title">{{ item.title }}</h2>
         <ul class="at-nav__items">
           <template v-if="item.items">
@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~/sass/src/variables/index.scss";
+@import "@/sass/src/variables/index.scss";
 
 .at-sidebar {
   display: inline-block;

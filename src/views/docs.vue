@@ -33,7 +33,7 @@
 import MHeader from '../components/header'
 import MFooter from '../components/footer'
 import Sidebar from '../components/sidebar'
-import navsConfig from '~/nav'
+import navsConfig from '@/nav'
 
 export default {
   components: {

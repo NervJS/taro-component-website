@@ -11,7 +11,7 @@
 </template>
 
 <style lang="scss">
-@import '~/sass/src/variables/index.scss';
+@import '@/sass/src/variables/index.scss';
 @import '../assets/style/mixin';
 
 /**

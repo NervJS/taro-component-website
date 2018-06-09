@@ -35,9 +35,9 @@ function regeisterRoute(navConfig) {
   function addRoute(name, lang, item) {
     const key = `${name}-${lang}`
     rootRouters[key].children.push({
-      name: key,
+      name: item.name,
       path: `${item.name.toLowerCase()}`,
-      component: require(`./markdown/${lang}/${item.name.toLowerCase()}.md`)
+      component: require(`./markdown/${lang}/${item.name.toLowerCase()}.md`).default
     })
   }
 
@@ -54,7 +54,7 @@ function regeisterRoute(navConfig) {
   return Object.values(rootRouters)
 }
 
-let routes = [] || regeisterRoute(NavConfig)
+let routes = regeisterRoute(NavConfig)
 
 routes = routes.concat([
   {
