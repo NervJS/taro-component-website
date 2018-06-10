@@ -1,8 +1,5 @@
 <template>
   <div class="at-component__container">
-    <div class="at-component__sample">
-      <slot name="demo"></slot>
-    </div>
     <collapse-transition>
       <div class="at-component__code" v-show="isShow">
         <slot name="source-code"></slot>
@@ -15,7 +12,7 @@
 </template>
 
 <script>
-import CollapseTransition from 'src/utils/collapse-transition'
+import CollapseTransition from '@/utils/collapse-transition'
 
 export default {
   components: {
@@ -23,7 +20,7 @@ export default {
   },
   data () {
     return {
-      isShow: false
+      isShow: true
     }
   },
   computed: {
@@ -32,7 +29,7 @@ export default {
     }
   },
   methods: {
-    handleCopySuccess (evt) {
+    handleCopySuccess () {
       this.$Message.success(`Code copied.`)
     }
   }

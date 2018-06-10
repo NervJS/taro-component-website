@@ -9,31 +9,22 @@
         </transition>
       </div>
     </div>
+    <div class="demo-frame">
+      <iframe  :src="newurl" frameborder="0"></iframe>
+    </div>
     <m-footer></m-footer>
   </div>
 </template>
-
-<style lang="scss">
-@import '../assets/style/docs.scss';
-</style>
-
-<style lang="scss" scoped>
-.wrapper {
-  background-color: #F8FAFF;
-}
-.page-header {
-  position: relative !important;
-}
-.footer {
-  box-shadow: 0 4px 30px 0 rgba(223, 225, 230, .8);
-}
-</style>
 
 <script>
 import MHeader from '../components/header'
 import MFooter from '../components/footer'
 import Sidebar from '../components/sidebar'
 import navsConfig from '@/nav'
+
+const URL_MAP = {
+  scrollview: 'scroll-view',
+}
 
 export default {
   components: {
@@ -46,6 +37,17 @@ export default {
       navs: navsConfig.zh.components
     }
   },
+  computed:{
+    newurl(){
+      const name = this.$route.name.toLowerCase().split('_')[1];
+      const isAbs = this.$route.path.indexOf('abs') >= 0;
+      const urlName = URL_MAP[name] ||  name;
+      if(isAbs){
+        return 'http://localhost:8080'
+      }
+      return `http://localhost:8080?time=${Date.now()}/#/pages/component/pages/${urlName}/${urlName}` 
+    }
+  },
   methods: {
     afterLeave () {
       window.scrollTo(0, 0)
@@ -53,3 +55,42 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import "../assets/style/docs.scss";
+</style>
+
+
+<style lang="scss" scoped>
+.wrapper {
+  background-color: #f8faff;
+}
+.at-container {
+  margin: 48px 0 48px 20px;
+  width: calc(100% - 450px);
+}
+.demo-frame {
+  width: 375px;
+  height: 667px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: 15px solid black;
+  border-radius: 15px;
+  border-top: 30px solid black;
+  position: absolute;
+  right: 25px;
+  top: 140px;
+  background-color: white;
+  iframe{
+    width:100%;
+    height: 100%;
+  }
+}
+.page-header {
+  position: relative !important;
+}
+.footer {
+  box-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.8);
+}
+</style>

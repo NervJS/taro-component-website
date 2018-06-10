@@ -34,10 +34,13 @@ function regeisterRoute(navConfig) {
 
   function addRoute(name, lang, item) {
     const key = `${name}-${lang}`
+    let simpleName = item.name.toLowerCase()
+    
     rootRouters[key].children.push({
       name: item.name,
-      path: `${item.name.toLowerCase()}`,
-      component: require(`./markdown/${lang}/${item.name.toLowerCase()}.md`).default
+      path: `${simpleName}`,
+      component: require(`./markdown/${lang}/${simpleName}.md`)
+        .default
     })
   }
 
