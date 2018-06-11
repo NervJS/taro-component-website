@@ -16,14 +16,19 @@ module.exports = {
         name: "Docs",
         groups: [
           {
-            title: "基础组件",
+            title: "视图容器",
             items: [
-              { title: "图标", name: "Base_Icon" },
-              { title: "文本", name: "Base_Text" },
-              { title: "进度条", name: "Base_Progress" },
               { title: "视图容器", name: "Base_View" },
               { title: "可滚动视图容器", name: "Base_ScrollView" },
               { title: "滑块视图容器", name: "Base_Swiper" }
+            ]
+          },
+          {
+            title: "基础内容",
+            items: [
+              { title: "图标", name: "Base_Icon" },
+              { title: "文本", name: "Base_Text" },
+              { title: "进度条", name: "Base_Progress" }
             ]
           },
           {
@@ -43,6 +48,10 @@ module.exports = {
             ]
           },
           {
+            title: "导航组件",
+            items: [{ title: "链接", name: "Nav_Navigator" }]
+          },
+          {
             title: "媒体组件",
             items: [
               { title: "音频", name: "Media_Audio" },
@@ -50,10 +59,6 @@ module.exports = {
               { title: "视频", name: "Media_Video" },
               { title: "相机", name: "Media_Cammer" }
             ]
-          },
-          {
-            title: "导航组件",
-            items: [{ title: "链接", name: "Nav_Navigator" }]
           }
         ]
       }

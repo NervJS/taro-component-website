@@ -1,14 +1,16 @@
-"use strict";
-const path = require("path");
-const utils = require("./utils");
-const config = require("../config");
-const vueLoaderConfig = require("./vue-loader.conf");
+"use strict"
+const path = require("path")
+const utils = require("./utils")
+const config = require("../config")
+const vueLoaderConfig = require("./vue-loader.conf")
 
-const MarkdownItContainer = require("markdown-it-container");
-const striptags = require("./strip-tags");
+const striptags = require("./strip-tags")
+const MarkdownItCheckBox = require("markdown-it-checkbox")
+const MarkdownItContainer = require("markdown-it-container")
+const MarkdownItTaskLists = require("markdown-it-task-lists")
 
 function resolve(dir) {
-  return path.join(__dirname, "..", dir);
+  return path.join(__dirname, "..", dir)
 }
 
 const createLintingRule = () => ({
@@ -20,19 +22,19 @@ const createLintingRule = () => ({
     formatter: require("eslint-friendly-formatter"),
     emitWarning: !config.dev.showEslintErrorsInOverlay
   }
-});
+})
 
 const vueMarkdown = {
+  preventExtract: true,
   preprocess: (MarkdownIt, source) => {
     MarkdownIt.renderer.rules.table_open = function() {
-      return '<table class="table">';
-    };
+      return '<table class="table">'
+    }
     MarkdownIt.renderer.rules.fence = utils.wrapCustomClass(
       MarkdownIt.renderer.rules.fence
-    );
-    return source;
+    )
+    return source
   },
-  preventExtract : true,
   use: [
     [
       MarkdownItContainer,
@@ -43,20 +45,20 @@ const vueMarkdown = {
           if (tokens[idx].nesting === 1) {
             const html = utils.convertHtml(
               striptags(tokens[idx + 1].content, "script")
-            );
+            )
 
             return `<demo-box>
                     <div slot="demo">${html}</div>
-                    <div slot="source-code">`;
+                    <div slot="source-code">`
           }
 
           // closing tag
-          return "</div></demo-box>";
+          return "</div></demo-box>"
         }
       }
     ]
   ]
-};
+}
 
 module.exports = {
   context: path.resolve(__dirname, "../"),
@@ -138,4 +140,4 @@ module.exports = {
     tls: "empty",
     child_process: "empty"
   }
-};
+}

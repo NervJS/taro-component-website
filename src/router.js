@@ -35,12 +35,14 @@ function regeisterRoute(navConfig) {
   function addRoute(name, lang, item) {
     const key = `${name}-${lang}`
     let simpleName = item.name.toLowerCase()
-    
+    let pathName = simpleName
+    if (name == "Docs") {
+      pathName = simpleName.split("_")[1]
+    }
     rootRouters[key].children.push({
-      name: item.name,
-      path: `${simpleName}`,
-      component: require(`./markdown/${lang}/${simpleName}.md`)
-        .default
+      name: pathName,
+      path: pathName,
+      component: require(`./markdown/${lang}/${simpleName}.md`).default
     })
   }
 
@@ -76,14 +78,13 @@ routes.forEach(page => {
     case "/zh/docs":
       page.children.push({
         path: "",
-        name: "Docs"
-        // redirect: { name: page.children[0].name }
+        name: "Docs",
+        redirect: { name: page.children[0].name }
       })
       break
   }
 })
 
 export default new Router({
-  routes: routes,
-  mode: "history"
+  routes: routes
 })

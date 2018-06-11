@@ -6,7 +6,7 @@
         <ul class="at-nav__items">
           <template v-if="item.items">
             <li class="at-nav__item" v-for="navItem in item.items" :key="navItem.name">
-              <router-link class="at-nav__page" :to="navItem.name.toLowerCase()">
+              <router-link class="at-nav__page" :to="item.name == 'Docs' ? navItem.name.toLowerCase().split('_')[1] : navItem.name.toLowerCase()">
                 {{ navItem.title }}</router-link>
             </li>
           </template>
@@ -14,7 +14,7 @@
             <a class="at-nav__group" @click="toggleMenu">{{ group.title }}<i class="icon icon-chevron-down"></i></a>
             <ul class="at-nav__child-items">
               <li class="at-nav__child-item" v-for="navItem in group.items" :key="navItem.name">
-                <router-link class="at-nav__component" :to="navItem.name.toLowerCase()">
+                <router-link class="at-nav__component" :to="item.name == 'Docs' ? navItem.name.toLowerCase().split('_')[1] : navItem.name.toLowerCase()">
                   {{ item.name == 'Docs' ? navItem.name.split('_')[1] : navItem.name }}<span>{{ navItem.title }}</span>
                 </router-link>
               </li>

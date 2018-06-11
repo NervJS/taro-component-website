@@ -1,70 +1,50 @@
-# 安装
+# 快速开始
 
-----
+## 安装
 
-## 使用 npm 安装
+安装 Taro 开发工具 `@tarojs/cli`
 
-推荐使用 `npm` 的方式进行开发，享受 `node` 生态圈和 `webpack` 工具链带来的便利。通过 `npm` 安装的模块包，我们可以轻松的使用 `import` 或者 `require` 的方式引用
+使用 npm 或者 yarn 全局安装，或者直接使用[npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
 
 ```bash
-npm install at-ui
-
-npm install at-ui-style
+$ npm install -g @tarojs/cli
+$ yarn global add @tarojs/cli
 ```
 
-## 浏览器标签引入
+## 使用
 
-可以采用传统的 `<script>` 和 `<link>` 标签的方式引入资源，并且全局使用 `AT-UI`。
+#### 使用命令创建模板项目
 
-可以在 [jsDelivr](https://www.jsdelivr.com/package/npm/at-ui) 上找到最新版本的资源文件，然后在页面中直接引入
-
-```html
-<!-- 引入Vue -->
-<script src="//cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<!-- 引入样式 -->
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/at-ui-style/css/at.min.css">
-<!-- 引入组件库 -->
-<script src="//cdn.jsdelivr.net/npm/at-ui/dist/at.min.js"></script>
+```bash
+$ taro init myApp
 ```
 
-#### 示例：
+#### npm5.2+ 也可在不全局安装的情况下使用 npx 创建模板项目
 
-通过浏览器资源标签引入的方式，我们可以迅速用 `AT-UI` 写出一个 DEMO 页面，可复制下列代码或者直接查看 [示例页面](https://jsbin.com/dezafos/edit?html,output)
+```bash
+$ npx @tarojs/cli init myApp
+```
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>AT-UI Example</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/at-ui-style/css/at.min.css">
-  <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/at-ui/dist/at.min.js"></script>
-  <style>
-    #app {
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
-</head>
-<body>
-  <div id="app">
-    <at-button @click="showMessage">Show message</at-button>
-  </div>
+#### 进入项目目录开始开发，可以选择小程序预览模式，或者h5预览模式，若使用微信小程序预览模式，则需要自行下载并打开[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，选择预览项目根目录下 `dist` 目录。
 
-  <script>
-    new Vue({
-      el: '#app',
-      methods: {
-        showMessage: function () {
-          this.$Message('Thanks for using AT-UI')
-        }
-      }
-    })
-  </script>
-</body>
-</html>
+#### 微信小程序编译预览模式
+
+```bash
+# npm script
+$ npm run dev:weapp
+# 仅限全局安装
+$ taro build --type weapp --watch
+# npx用户也可以使用
+$ npx taro build --type weapp --watch
+```
+
+#### H5编译预览模式
+
+```bash
+# npm script
+$ npm run dev:h5
+# 仅限全局安装
+$ taro build --type h5 --watch
+# npx用户也可以使用
+$ npx taro build --type h5 --watch
 ```

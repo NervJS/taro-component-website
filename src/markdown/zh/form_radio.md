@@ -1,10 +1,8 @@
-# View 视图容器
+# Radio 单选框
 
 ---
 
 ## 如何使用
-
-使用 `class="icon"` 来声明图标，具体图标的名称请 `copy` 相应的标签
 
 :::demo
 
@@ -95,21 +93,17 @@ export default class PageRadio extends Component {
 
 :::
 
-## Icon 参数
+## Radio 参数
 
-##### RadioGroup
+#### RadioGroup 单项选择器，内部由多个<radio/>组成。
 
-##### 单项选择器，内部由多个<radio/>组成。
-
-|     | 属性     | 类型        | 默认值 | 说明                                                                                           |
+|  H5   | 属性     | 类型        | 默认值 | 说明                                                                                           |
 | --- | -------- | ----------- | ------ | ---------------------------------------------------------------------------------------------- |
 | √   | onChange | EventHandle |        | <radioGroup/>中选中项发生改变是触发 change 事件，detail = value:[选中的 radio 的 value 的数组] |
 
-##### Radio
+#### Radio 单选项目
 
-##### 单选项目
-
-|     | 属性     | 类型        | 默认值 | 说明                                                                                   |
+|  H5   | 属性     | 类型        | 默认值 | 说明                                                                                   |
 | --- | -------- | ----------- | ------ | -------------------------------------------------------------------------------------- |
 |     | value    | String      | false  | <Radio/> 标识。当该<Radio/> 选中时，<radioGroup/> 的 change 事件会携带<Radio/>的 value |
 | √   | checked  | Boolean     | false  | 当前是否选中                                                                           |

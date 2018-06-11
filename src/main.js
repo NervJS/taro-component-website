@@ -1,6 +1,9 @@
+require('./sass/src/index.scss')
+
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+
 
 import DemoBox from './components/demobox'
 import IconList from './components/iconlist'
@@ -19,7 +22,6 @@ Vue.config.ignoredElements = [
   'swiperitem'
 ]
 
-import './sass/src/index.scss'
 
 new Vue({
   router,

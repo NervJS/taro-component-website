@@ -26,6 +26,8 @@ const URL_MAP = {
   scrollview: 'scroll-view',
 }
 
+const ABS_MAP = ['introduction','installation','quickstart','changelog']
+
 export default {
   components: {
     Sidebar,
@@ -39,13 +41,13 @@ export default {
   },
   computed:{
     newurl(){
-      const name = this.$route.name.toLowerCase().split('_')[1];
-      const isAbs = this.$route.path.indexOf('abs') >= 0;
+      const name = this.$route.name;
+      const isAbs =  ABS_MAP.indexOf(name) >= 0;
       const urlName = URL_MAP[name] ||  name;
       if(isAbs){
-        return 'http://localhost:8080'
+        return './taro.html'
       }
-      return `http://localhost:8080?time=${Date.now()}/#/pages/component/pages/${urlName}/${urlName}` 
+      return `./taro.html?time=${Date.now()}/#/pages/component/pages/${urlName}/${urlName}` 
     }
   },
   methods: {
@@ -82,8 +84,8 @@ export default {
   right: 25px;
   top: 140px;
   background-color: white;
-  iframe{
-    width:100%;
+  iframe {
+    width: 100%;
     height: 100%;
   }
 }
