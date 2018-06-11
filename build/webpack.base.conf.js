@@ -5,9 +5,8 @@ const config = require("../config")
 const vueLoaderConfig = require("./vue-loader.conf")
 
 const striptags = require("./strip-tags")
-const MarkdownItCheckBox = require("markdown-it-checkbox")
 const MarkdownItContainer = require("markdown-it-container")
-const MarkdownItTaskLists = require("markdown-it-task-lists")
+const MarkdownItCheckBox = require("markdown-it-checkbox")
 
 function resolve(dir) {
   return path.join(__dirname, "..", dir)
@@ -56,6 +55,13 @@ const vueMarkdown = {
           return "</div></demo-box>"
         }
       }
+    ],
+    [
+      MarkdownItCheckBox,
+      {
+        divWrap: true,
+        divClass: "at-component-markdown_checkbox",
+      }
     ]
   ]
 }
@@ -77,7 +83,8 @@ module.exports = {
     extensions: [".js", ".vue", ".json"],
     alias: {
       vue$: "vue/dist/vue.esm.js",
-      "@": resolve("src")
+      "@": resolve("src"),
+      "~assets": resolve("src/assets/")
     }
   },
   module: {
@@ -118,7 +125,8 @@ module.exports = {
         loader: "url-loader",
         options: {
           limit: 10000,
-          name: utils.assetsPath("fonts/[name].[hash:7].[ext]")
+          name: utils.assetsPath("fonts/[name].[hash:7].[ext]"),
+          publicPath: process.env.NODE_ENV === "production" ? "../../" : "/"
         }
       },
       {

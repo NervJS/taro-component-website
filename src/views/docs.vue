@@ -45,9 +45,9 @@ export default {
       const isAbs =  ABS_MAP.indexOf(name) >= 0;
       const urlName = URL_MAP[name] ||  name;
       if(isAbs){
-        return './taro.html'
+        return './taro/'
       }
-      return `./taro.html?time=${Date.now()}/#/pages/component/pages/${urlName}/${urlName}` 
+      return `./taro/?time=${Date.now()}/#/pages/component/pages/${urlName}/${urlName}` 
     }
   },
   methods: {
@@ -64,6 +64,7 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "@/sass/src/variables/index.scss";
 .wrapper {
   background-color: #f8faff;
 }
@@ -89,6 +90,26 @@ export default {
     height: 100%;
   }
 }
+
+@media screen and (max-width: $screen-sm-max) {
+  .at-container {
+    position: relative;
+    margin: 48px auto;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
+  }
+  .demo-frame {
+    position: initial;
+    right: initial;
+    top: initial;
+    margin-left: initial;
+    margin-bottom: 40px;
+    width: 100%;
+    height: 500px;
+  }
+}
+
 .page-header {
   position: relative !important;
 }
