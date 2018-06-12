@@ -19,7 +19,10 @@ Vue.config.ignoredElements = [
   'icon',
   'swiper',
   'scrollview',
-  'swiperitem'
+  'swiperitem',
+  'radio',
+  'Radio',
+  'radioGroup'
 ]
 
 

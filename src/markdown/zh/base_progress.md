@@ -5,11 +5,48 @@
 ## 如何使用
 
 :::demo
-```html
-<Progress percent={20} showInfo strokeWidth={2} />
-<Progress percent={40} strokeWidth={2} active />
-<Progress percent={60}  strokeWidth={2} active />
-<Progress percent={80}  strokeWidth={2} active activeColor='blue' />
+```jsx
+import Nerv, { Component } from 'nervjs' // Nerv框架
+// import Taro, { Component } from '@tarojs/taro' // 或者使用 Taro框架
+
+import { View, Text, Progress } from '@nerv/nerv-weui'
+
+export default class PageView extends Component {
+  constructor() {
+    super(...arguments)
+  }
+
+  render() {
+    return (
+      <View className="container">
+        <View className="page-body">
+          <View className="page-section">
+            <View className="page-section-spacing" style='margin-bottom:104px;'>
+              <Progress percent={20} showInfo strokeWidth={2} ></Progress>
+            </View>
+            <View className="page-section-spacing">
+              <Progress percent={40} strokeWidth={2} active ></Progress>
+            </View>
+            <View className="page-section-spacing">
+              <Progress percent={60}  strokeWidth={2} active ></Progress>
+            </View>
+            <View className="page-section-spacing">
+              <Progress percent={80}  strokeWidth={2} active activeColor='blue' ></Progress>
+            </View>
+          </View>
+        </View>
+      </View>
+    )
+  }
+}
+```
+```scss
+.page-section-spacing {
+  position: relative;
+  margin-bottom: 80px;
+  height: 50px;
+}
+
 ```
 :::
 

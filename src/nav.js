@@ -6,9 +6,9 @@ module.exports = {
         name: "Docs",
         items: [
           { title: "介绍", name: "Abs_Introduction" },
-          { title: "安装", name: "Abs_Installation" },
+          // { title: "安装", name: "Abs_Installation" },
           { title: "快速上手", name: "Abs_Quickstart" },
-          { title: "更新日志", name: "Abs_Changelog" }
+          // { title: "更新日志", name: "Abs_Changelog" }
         ]
       },
       {
@@ -42,7 +42,6 @@ module.exports = {
               { title: "输入框", name: "Form_Input" },
               { title: "多行输入框", name: "Form_Textarea" },
               { title: "选择器", name: "Form_Picker" },
-              { title: "选择器视图", name: "Form_PickerView" },
               { title: "滑动选择器", name: "Form_Slider" },
               { title: "开关选择器", name: "Form_Switch" }
             ]
@@ -57,7 +56,7 @@ module.exports = {
               { title: "音频", name: "Media_Audio" },
               { title: "图片", name: "Media_Image" },
               { title: "视频", name: "Media_Video" },
-              { title: "相机", name: "Media_Cammer" }
+              // { title: "相机", name: "Media_Cammer" }
             ]
           }
         ]

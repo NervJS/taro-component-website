@@ -44,10 +44,11 @@ export default {
       const name = this.$route.name;
       const isAbs =  ABS_MAP.indexOf(name) >= 0;
       const urlName = URL_MAP[name] ||  name;
+      const baseUrl = process.env.NODE_ENV == "development" ? './static/taro/' : './taro/'
       if(isAbs){
-        return './taro/'
+        return baseUrl
       }
-      return `./taro/?time=${Date.now()}/#/pages/component/pages/${urlName}/${urlName}` 
+      return `${baseUrl}?time=${Date.now()}/#/pages/component/pages/${urlName}/${urlName}` 
     }
   },
   methods: {

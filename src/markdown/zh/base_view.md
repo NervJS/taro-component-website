@@ -5,20 +5,64 @@
 ## 如何使用
 
 :::demo
-```html
-<Text>flex-direction: row 横向布局</Text>
-<View className="flex-wrp" style="flex-direction:row;">
-  <View className="flex-item demo-text-1"/>
-  <View className="flex-item demo-text-2"/>
-  <View className="flex-item demo-text-3"/>
-</View>
-<Text>flex-direction: column 纵向布局</Text>
+```jsx
+import Nerv, { Component } from 'nervjs' // Nerv框架
+// import Taro, { Component } from '@tarojs/taro' // 或者使用 Taro框架
 
-<View className="flex-wrp" style="flex-direction:column;">
-  <View className="flex-item flex-item-V demo-text-1"/>
-  <View className="flex-item flex-item-V demo-text-2"/>
-  <View className="flex-item flex-item-V demo-text-3"/>
-</View>
+import { View, Text } from '@nerv/nerv-weui'
+
+export default class PageView extends Component {
+  constructor() {
+    super(...arguments)
+  }
+  render() {
+    return (
+      <View className="container">
+        <View className="page-body">
+          <View className="page-section">
+            <View className="page-section-title">
+              <Text>flex-direction: row 横向布局</Text>
+            </View>
+            <View className="page-section-spacing">
+              <View className="flex-wrp" style="flex-direction:row;">
+                <View className="flex-item demo-text-1" ></View>
+                <View className="flex-item demo-text-2" ></View>
+                <View className="flex-item demo-text-3" ></View>
+              </View>
+            </View>
+          </View>
+          <View className="page-section">
+            <View className="page-section-title">
+              <Text>flex-direction: column 纵向布局</Text>
+            </View>
+            <View className="flex-wrp" style="flex-direction:column;">
+              <View className="flex-item flex-item-V demo-text-1" ></View>
+              <View className="flex-item flex-item-V demo-text-2" ></View>
+              <View className="flex-item flex-item-V demo-text-3" ></View>
+            </View>
+          </View>
+        </View>
+      </View>
+    )
+  }
+}
+```
+
+```scss
+.flex-wrp {
+  margin-top: 60px;
+  display: flex;
+}
+.flex-item {
+  width: 200px;
+  height: 300px;
+  font-size: 26px;
+}
+.flex-item-V {
+  margin: 0 auto;
+  width: 300px;
+  height: 200px;
+}
 ```
 :::
 

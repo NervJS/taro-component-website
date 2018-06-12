@@ -1,4 +1,4 @@
-<template>
+\<template>
   <div class="at-sidebar col-sm-24 col-md-6 col-lg-4">
     <nav class="at-nav">
       <div v-for="(item,index) in data" :key="index">
