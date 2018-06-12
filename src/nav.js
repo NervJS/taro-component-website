@@ -18,9 +18,9 @@ module.exports = {
           {
             title: "视图容器",
             items: [
-              { title: "视图容器", name: "Base_View" },
-              { title: "可滚动视图容器", name: "Base_ScrollView" },
-              { title: "滑块视图容器", name: "Base_Swiper" }
+              { title: "视图容器", name: "View_View" },
+              { title: "可滚动视图容器", name: "View_ScrollView" },
+              { title: "滑块视图容器", name: "View_Swiper" }
             ]
           },
           {
@@ -46,10 +46,10 @@ module.exports = {
               { title: "开关选择器", name: "Form_Switch" }
             ]
           },
-          {
-            title: "导航组件",
-            items: [{ title: "链接", name: "Nav_Navigator" }]
-          },
+          // {
+          //   title: "导航组件",
+          //   items: [{ title: "链接", name: "Nav_Navigator" }]
+          // },
           {
             title: "媒体组件",
             items: [

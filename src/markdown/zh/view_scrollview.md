@@ -17,10 +17,10 @@ export default class PageView extends Component {
   }
   render() {
     return (
-      <View className="container">
-        <View className="page-body">
-          <View className="page-section">
-            <View className="page-section-title">
+      <View className='container'>
+        <View className='page-body'>
+          <View className='page-section'>
+            <View className='page-section-title'>
               <Text>Vertical Scroll\n纵向滚动</Text>
             </View>
             <ScrollView className='scrollview'
@@ -37,8 +37,8 @@ export default class PageView extends Component {
               <View style='height:150px;background-color:rgb(241,241,241);color: #333;'>C</View>
             </ScrollView>
           </View>
-          <View className="page-section">
-            <View className="page-section-title">
+          <View className='page-section'>
+            <View className='page-section-title'>
               <Text> Horizontal \n横向滚动</Text>
             </View>
             <ScrollView className='scrollview'

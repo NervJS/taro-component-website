@@ -62,10 +62,10 @@ export default class PageButton extends Component {
     }
     render() {
         return (
-            <View className="container">
-                <View className="page-body">
-                    <View className="page-section">
-                        <View className="page-section-spacing-reset">
+            <View className='container'>
+                <View className='page-body'>
+                    <View className='page-section'>
+                        <View className='page-section-spacing-reset'>
                             {this.state.btn.map(item => {
                                 return (
                                     <Button
@@ -77,14 +77,14 @@ export default class PageButton extends Component {
                                     </Button>
                                 )
                             })}
-                            <Button className="btn-max-w" plain type="primary">按钮</Button>
-                            <Button className="btn-max-w" plain type="primary" disabled>不可点击的按钮</Button>
-                            <Button className="btn-max-w" plain >按钮</Button>
-                            <Button className="btn-max-w" plain disabled >按钮</Button>
-                            <View className="btn-center btn-max-w">
-                                <Button size="mini" type="primary">按钮</Button>
-                                <Button size="mini" >按钮</Button>
-                                <Button size="mini" type="warn">按钮</Button>
+                            <Button className='btn-max-w' plain type='primary'>按钮</Button>
+                            <Button className='btn-max-w' plain type='primary' disabled>不可点击的按钮</Button>
+                            <Button className='btn-max-w' plain >按钮</Button>
+                            <Button className='btn-max-w' plain disabled >按钮</Button>
+                            <View className='btn-center btn-max-w'>
+                                <Button size='mini' type='primary'>按钮</Button>
+                                <Button size='mini' >按钮</Button>
+                                <Button size='mini' type='warn'>按钮</Button>
                             </View>
                         </View>
                     </View>
@@ -118,7 +118,7 @@ export default class PageButton extends Component {
 |     | formType             | String  |              | 用于 form 组件，点击分别会触发 form 组件的 submit/reset 事件                                |
 |     | openType             | String  |              | 微信开放能力                                                                                |
 |     | appParameter         | String  |              | 打开 APP 时，向 APP 传递的参数                                                              |
-| √   | hoverClass           | String  | button-hover | 指定按钮按下去的样式类。当 hover-class="none" 时，没有点击态效果                            |
+| √   | hoverClass           | String  | button-hover | 指定按钮按下去的样式类。当 hover-class='none' 时，没有点击态效果                            |
 |     | hoverStopPropagation | Boolean | false        | 指定是否阻止本节点的祖先节点出现点击态                                                      |
 | √   | hoverStartTime       | Number  | 20           | 按住后多久出现点击态，单位毫秒                                                              |
 | √   | hoverStayTime        | Number  | 70           | 手指松开后点击态保留时间，单位毫秒                                                          |

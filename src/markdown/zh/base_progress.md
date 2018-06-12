@@ -18,19 +18,19 @@ export default class PageView extends Component {
 
   render() {
     return (
-      <View className="container">
-        <View className="page-body">
-          <View className="page-section">
-            <View className="page-section-spacing" style='margin-bottom:104px;'>
+      <View className='container'>
+        <View className='page-body'>
+          <View className='page-section'>
+            <View className='page-section-spacing' style='margin-bottom:104px;'>
               <Progress percent={20} showInfo strokeWidth={2} ></Progress>
             </View>
-            <View className="page-section-spacing">
+            <View className='page-section-spacing'>
               <Progress percent={40} strokeWidth={2} active ></Progress>
             </View>
-            <View className="page-section-spacing">
+            <View className='page-section-spacing'>
               <Progress percent={60}  strokeWidth={2} active ></Progress>
             </View>
-            <View className="page-section-spacing">
+            <View className='page-section-spacing'>
               <Progress percent={80}  strokeWidth={2} active activeColor='blue' ></Progress>
             </View>
           </View>

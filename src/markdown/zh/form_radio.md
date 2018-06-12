@@ -13,9 +13,6 @@ import Nerv, { Component } from 'nervjs' // Nerv框架
 import { View, Text, Radio } from '@nerv/nerv-weui'
 
 export default class PageRadio extends Component {
-    config = {
-        navigationBarTitleText: 'Radio'
-    }
     constructor() {
         super(...arguments)
     }
@@ -56,28 +53,28 @@ export default class PageRadio extends Component {
     }
     render() {
         return (
-            <View className="container">
-                <View className="page-body">
-                    <View className="page-section">
-                        <View className="page-section-title">
+            <View className='container'>
+                <View className='page-body'>
+                    <View className='page-section'>
+                        <View className='page-section-title'>
                             <Text>默认样式</Text>
                         </View>
-                        <View className="page-section-spacing-reset">
-                            <Radio value="选中" checked>选中</Radio>
-                            <Radio style="margin-left: 20px" value="未选中">未选中</Radio>
+                        <View className='page-section-spacing-reset'>
+                            <Radio value='选中' checked>选中</Radio>
+                            <Radio style='margin-left: 20px' value='未选中'>未选中</Radio>
                         </View>
                     </View>
-                    <View className="page-section">
-                        <View className="page-section-title">
+                    <View className='page-section'>
+                        <View className='page-section-title'>
                             <Text>推荐展示样式</Text>
                         </View>
                         <View>
-                            <View className="radio-list">
+                            <View className='radio-list'>
                                 <RadioGroup>
                                     {this.state.list.map((item, i) => {
                                         return (
-                                            <Label className="radio-list__label" for={i} key={i}>
-                                                <Radio className="radio-list__radio" value={item.value} checked={item.checked}>{item.text}</Radio>
+                                            <Label className='radio-list__label' for={i} key={i}>
+                                                <Radio className='radio-list__radio' value={item.value} checked={item.checked}>{item.text}</Radio>
                                             </Label>
                                         )
                                     })}
@@ -97,7 +94,7 @@ export default class PageRadio extends Component {
     padding: 10px 15px;
     background-color: #FFFFFF;
     &::before {
-        content: " ";
+        content: ' ';
         position: absolute;
         left: 0;
         top: 0;
@@ -107,7 +104,7 @@ export default class PageRadio extends Component {
         color: #e5e5e5;
     }
     &::after {
-        content: " ";
+        content: ' ';
         position: absolute;
         left: 0;
         bottom: 0;
@@ -124,7 +121,7 @@ export default class PageRadio extends Component {
     padding: 10px 15px;
     &:not(:first-child) {
         &::before {
-            content: "";
+            content: '';
             position: absolute;
             left: 0;
             top: 0;

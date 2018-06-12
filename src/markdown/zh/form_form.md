@@ -25,9 +25,6 @@ import {
   Switch } from '@nerv/nerv-weui'
 
 export default class PageForm extends Component {
-    config = {
-        navigationBarTitleText: 'Form'
-    }
     constructor() {
         super(...arguments)
     }
@@ -85,23 +82,23 @@ export default class PageForm extends Component {
 
     render() {
         return (
-            <View className="container">
-                <Head title="Form" />
-                <View className="page-body">
+            <View className='container'>
+                <Head title='Form' />
+                <View className='page-body'>
                     <Form onSubmit={this.formSubmit} onReset={this.formReset}>
-                        <View className="page-section">
-                            <View className="page-section-title">
+                        <View className='page-section'>
+                            <View className='page-section-title'>
                                 <Text>switch</Text>
                             </View>
-                            <View className="page-section-spacing-reset">
+                            <View className='page-section-spacing-reset'>
                                 <Switch onChange={this.onHandleChange} name='switch' ></Switch>
                             </View>
                         </View>
-                        <View className="page-section">
-                            <View className="page-section-title">
+                        <View className='page-section'>
+                            <View className='page-section-title'>
                                 <Text>radio</Text>
                             </View>
-                            <View className="page-section-spacing-reset">
+                            <View className='page-section-spacing-reset'>
                                 <RadioGroup onChange={this.onRadioChange} name='radio' >
                                     {this.state.radioItem.map(item => {
                                         return (
@@ -115,11 +112,11 @@ export default class PageForm extends Component {
                                 </RadioGroup>
                             </View>
                         </View>
-                        <View className="page-section">
-                            <View className="page-section-title">
+                        <View className='page-section'>
+                            <View className='page-section-title'>
                                 <Text>checkbox</Text>
                             </View>
-                            <View className="page-section-spacing-reset">
+                            <View className='page-section-spacing-reset'>
                                 <CheckboxGroup onChange={this.onCheckChange} name='check' >
                                     {this.state.checkItem.map(item => {
                                         return (
@@ -133,11 +130,11 @@ export default class PageForm extends Component {
                                 </CheckboxGroup>
                             </View>
                         </View>
-                        <View className="page-section">
-                            <View className="page-section-title">
+                        <View className='page-section'>
+                            <View className='page-section-title'>
                                 <Text>slider</Text>
                             </View>
-                            <View className="page-section-spacing-reset">
+                            <View className='page-section-spacing-reset'>
                                 <Slider name='slider'
                                     value={this.state.sliderValue}
                                     showValue
@@ -145,16 +142,16 @@ export default class PageForm extends Component {
                                     bingchanging={this.handleSliderChanging} ></Slider>
                             </View>
                         </View>
-                        <View className="page-section">
-                            <View className="page-section-title">
+                        <View className='page-section'>
+                            <View className='page-section-title'>
                                 <Text>input</Text>
                             </View>
-                            <View className="page-section-spacing-reset" style="background:#fff;padding:15px 30px;">
+                            <View className='page-section-spacing-reset' style='background:#fff;padding:15px 30px;'>
                                 <Input name='input' type='text' placeholder={'这是一个输入框'} onChange={this.onHandleChange} ></Input>
                             </View>
                         </View>
-                        <View className="page-section">
-                            <View className="page-section-spacing-reset">
+                        <View className='page-section'>
+                            <View className='page-section-spacing-reset'>
                                 <Button formType='submit' type='primary'>Submit</Button>
                                 <Button formType='reset' type='default'>Reset</Button>
                             </View>
