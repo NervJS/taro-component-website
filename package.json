@@ -15,10 +15,13 @@
   },
   "dependencies": {
     "clipboard": "^2.0.1",
+    "install": "^0.11.0",
     "markdown-it-checkbox": "^1.1.0",
     "markdown-it-container": "^2.0.0",
+    "markdown-it-include": "^1.0.0",
     "markdown-it-mark": "^2.0.0",
     "markdown-it-task-lists": "^2.1.1",
+    "npm": "^6.1.0",
     "vue": "^2.5.2",
     "vue-markdown-loader": "^2.4.1",
     "vue-router": "^3.0.1"

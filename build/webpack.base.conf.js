@@ -60,7 +60,16 @@ const vueMarkdown = {
       MarkdownItCheckBox,
       {
         divWrap: true,
-        divClass: "at-component-markdown_checkbox",
+        divClass: "at-component-markdown_checkbox"
+      }
+    ],
+    [
+      require(resolve("./build/md-include")),
+      {
+        basedir: resolve("./pages"),
+        filter: content => {
+          return content.replace(/import.*(.scss).*(\n*)/, "")
+        }
       }
     ]
   ]

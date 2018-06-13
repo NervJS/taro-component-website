@@ -7,49 +7,11 @@
 :::demo
 
 ```jsx
-import Nerv, { Component } from 'nervjs' // Nerv框架
-// import Taro, { Component } from '@tarojs/taro' // 或者使用 Taro框架
-
-import { Navigator,View } from '@nerv/nerv-weui'
-
-export default class PageSwitch extends Component {
-  constructor () {
-    super(...arguments)
-  }
-
-  state = {}
-
-  render () {
-    return (
-      <View className='container'>
-        <View className='page-body'>
-          <View className='page-section'>
-            <Navigator url='/pages/component/pages/navigatePage/navigatePage' className='navigator'>
-              <View className='navigator-text'>
-                跳转到新页面
-              </View>
-            </Navigator>
-            <Navigator url='/pages/component/pages/redirectPage/redirectPage' className='navigator' open-type='redirect'>
-              <View className='navigator-text'>
-                在当前页打开
-              </View>
-            </Navigator>
-          </View>
-        </View>
-      </View>
-    )
-  }
-}
+!!!include(navigator/navigator.js)!!!
 ```
 
 ```scss
-.navigator {
-  height: 80px;
-  line-height: 80px;
-  margin: 20px 100px 0;
-  text-align: center;
-  border: 1px solid #ccc;
-}
+!!!include(navigator/navigator.scss)!!!
 ```
 :::
 
