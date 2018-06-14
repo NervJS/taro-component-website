@@ -68,7 +68,8 @@ const vueMarkdown = {
       {
         basedir: resolve("./pages"),
         filter: content => {
-          return content.replace(/import.*(.scss).*(\n*)/, "")
+          let result = content.replace(/import.*(head\/head|.scss).*(\n*)/gi, "").replace(/<Header[\s\S]*Header>(\s)*/,'')
+          return result
         }
       }
     ]
