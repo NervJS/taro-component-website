@@ -7,10 +7,13 @@ import router from './router'
 
 import DemoBox from './components/demobox'
 import IconList from './components/iconlist'
+import VueQrcode from '@xkeshi/vue-qrcode'
 
 import VueClipboard from './directives/clipboard'
 
 Vue.use(VueClipboard)
+
+Vue.component('qrcode', VueQrcode);
 
 Vue.component('demo-box', DemoBox)
 Vue.component('icon-list', IconList)

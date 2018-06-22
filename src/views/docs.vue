@@ -4,6 +4,13 @@
     <div class="at-container row">
       <sidebar :data="navs"></sidebar>
       <div class="at-markdown col-sm-24 col-md-18 col-lg-20">
+        <div class="qrcode-container">
+          <img src="@/assets/qr_code.png" alt="qrcode">
+          <div class="qrcode-modal">
+            <h6>扫描二维码查看演示效果</h6>
+            <qrcode class="qrcode-box" :value="completeUrl" :options="{ size: 150 }"></qrcode>
+          </div>
+        </div>
         <transition name="fade" mode="out-in" @after-leave="afterLeave">
           <router-view></router-view>
         </transition>
@@ -40,6 +47,11 @@ export default {
     }
   },
   computed:{
+    completeUrl(){
+      const path = document.location.href.split('#')[0]
+      const url = this.newurl.slice(2);
+      return `${path}${url}`;
+    },
     newurl(){
       const name = this.$route.name;
       const isAbs =  ABS_MAP.indexOf(name) >= 0;
@@ -65,6 +77,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/sass/src/variables/index.scss";
+
 .wrapper {
   background-color: #f8faff;
 }
@@ -74,20 +87,70 @@ export default {
 }
 .demo-frame {
   width: 375px;
-  height: 667px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  border: 15px solid black;
-  border-radius: 15px;
-  border-top: 30px solid black;
+  height: 758px;
   position: absolute;
   right: 25px;
   top: 140px;
-  background-color: white;
+  background: url("../assets/iframe.png") no-repeat;
+  background-size: contain;
   iframe {
+    width: 375px;
+    height: 755px;
+    padding: 18px 22px;
+    border-radius: 63px;
+  }
+}
+
+.qrcode-container {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 45px;
+  top: 40px;
+  padding-bottom: 15px;
+  box-sizing: content-box;
+  h6 {
+    font-size: 12px;
+    text-align: center;
+  }
+  img {
+    opacity: 0.3;
     width: 100%;
     height: 100%;
+  }
+  &:after {
+    display: none;
+    content: "";
+    z-index: 11;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: calc(100% - 8px);
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    background-color: white;
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.06);
+  }
+  .qrcode-modal {
+    display: none;
+    z-index: 10;
+    padding: 10px;
+    padding-bottom: 5px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 100%;
+    left: -70px;
+    .qrcode-box {
+      margin-top: 8px;
+      width: 140px;
+    }
+  }
+  &:hover {
+    &:after,
+    .qrcode-modal {
+      display: initial;
+    }
   }
 }
 

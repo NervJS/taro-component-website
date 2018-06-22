@@ -14,6 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@xkeshi/vue-qrcode": "^0.3.0",
     "clipboard": "^2.0.1",
     "install": "^0.11.0",
     "markdown-it-checkbox": "^1.1.0",

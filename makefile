@@ -7,4 +7,4 @@ todo-clean:
 	rm -rf $(TARGET_NAME)
 
 copy-todo: 
-	rm -rf $(TARGET_NAME) $(FOLDER_NAME) && git clone https://github.com/NervJS/taro-todo.git $(FOLDER_NAME) && mv -f ./$(FOLDER_NAME)/src/pages/component/pages ./ && rm -rf $(FOLDER_NAME)
+	rm -rf $(TARGET_NAME) $(FOLDER_NAME) && git clone https://github.com/NervJS/taro-components-sample.git $(FOLDER_NAME) && mv -f ./$(FOLDER_NAME)/src/pages/component/pages ./ && rm -rf $(FOLDER_NAME)

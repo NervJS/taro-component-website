@@ -9,8 +9,8 @@
       <div class="nav-left">
         <div class="logo">
           <router-link to="Home">
-            <img class="logo-img" src="../assets/logo-at@2x.png" preload="">
-            <span>AT UIKIT</span>
+            <img class="logo-img" src="@/assets/logo-ui@2x.png" preload="">
+            Taro基础组件
           </router-link>
         </div>
         <i class="icon icon-menu nav-icon" @click="toggleMenu"></i>
@@ -107,13 +107,23 @@ $header-height: 80px;
       position: relative;
       height: $header-height;
       line-height: $header-height;
-
+      & > a {
+        display: inline-block;
+        width: 300px;
+        padding-left: 90px;
+        font-size: 25px;
+        color: #333;
+        vertical-align: bottom;
+        // padding-top: 20px;
+        box-sizing: border-box;
+        height: 80px;
+      }
       img {
         position: absolute;
         top: 50%;
-        margin-top: -15px;
-        width: 30px;
-        height: 30px;
+        left: 0;
+        width: 80px;
+        transform: translateY(-50%);
       }
       span {
         margin-left: 40px;

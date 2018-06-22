@@ -1,4 +1,4 @@
-\<template>
+<template>
   <div class="at-sidebar col-sm-24 col-md-6 col-lg-4">
     <nav class="at-nav">
       <div v-for="(item,index) in data" :key="index">
@@ -141,7 +141,7 @@ export default {
       left: 0;
       width: 5px;
       height: 100%;
-      background: #6190e8;
+    background: #6190e8;
       border-top-right-radius: 4px;
       border-bottom-right-radius: 4px;
       box-shadow: 1px 0 12px 0 #6190e8;
