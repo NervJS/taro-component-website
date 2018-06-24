@@ -55,14 +55,11 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
   box-sizing: content-box;
 }
 .img-container {
-  width: 60vw;
+  width: 900px;
   position: absolute;
   margin: auto;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  height: 42vw;
+  left: 300px;
+  top: 100px;
   z-index: -1;
   max-width: 1080px;
   img {
