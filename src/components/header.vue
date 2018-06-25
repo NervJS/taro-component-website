@@ -108,6 +108,7 @@ $header-height: 80px;
   width: 1200px;
   height: 100%;
   color: #1d1d1f;
+  max-width: 100%;
 
   .nav-left {
     float: left;
@@ -231,4 +232,25 @@ $header-height: 80px;
   }
 }
 
+@media screen and (max-width: $screen-sm-max) {
+  .nav-container {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    .nav-left{
+      width: 100%;
+    }
+    .nav-left .logo {
+      display: inline-block;
+      & > a {
+        width: 200px;
+        padding-left: 70px;
+        font-size: 20px;
+      }
+      img {
+        width: 80px;
+      }
+    }
+  }
+}
 </style>

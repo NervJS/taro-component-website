@@ -12,7 +12,7 @@
         
         <div class="btn-container">
           <div class="btn btn-begin">
-            <router-link to="/zh/docs/introduction">开始使用</router-link>
+            <a @click="toDemo" to="/zh/docs/introduction">开始使用</a>
           </div>
           <div class="btn btn-github">
             <a href="https://github.com/NervJS/nerv-weui">Github</a>
@@ -40,6 +40,15 @@ export default {
   components: {
     MHeader,
     MFooter
+  },
+  methods:{
+    toDemo(){
+      if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+          window.location.href = "./static/taro/";
+        } else {
+          this.$router.push('/zh/docs/introduction')
+        }
+    }
   }
 }
 </script>
@@ -52,6 +61,7 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
 
 .home-container {
   width: 1200px;
+  max-width: 100%;
   height: 100vh;
   position: relative;
   margin: 0 auto;
@@ -69,19 +79,19 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
       top: -100px;
       right: 150px;
       z-index: 1;
-      animation-delay: .3s;
+      animation-delay: 0.3s;
     }
     &.web {
       top: -50px;
       left: 180px;
       z-index: 2;
-      animation-delay: .6s;
+      animation-delay: 0.6s;
     }
     &.media {
       top: 100px;
       right: 280px;
       z-index: 3;
-      animation-delay: .9s;
+      animation-delay: 0.9s;
     }
     &.message {
       top: -40px;
@@ -109,7 +119,7 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
     font-size: 110px;
     color: #2842a2;
     font-style: italic;
-     animation-delay: 2.5s;
+    animation-delay: 2.5s;
   }
   .note {
     h4 {
@@ -151,6 +161,23 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
     a {
       color: #2842a2;
     }
+  }
+}
+
+@media screen and (max-width: $screen-sm-max) {
+  .home-container {
+    height: auto;
+    margin-top: 150px;
+  }
+  .info-box {
+    text-align: center;
+    position: initial;
+    .btn-container .btn {
+      margin-bottom: 20px;
+    }
+  }
+  .img-container {
+    display: none;
   }
 }
 
@@ -259,5 +286,4 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
-
 </style>
