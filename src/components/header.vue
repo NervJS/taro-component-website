@@ -9,15 +9,22 @@
       <div class="nav-left">
         <div class="logo">
           <router-link to="Home">
-            <img class="logo-img" src="@/assets/logo-ui@2x.png" preload="">
-            Taro基础组件
+            <img class="logo-img" src="@/assets/taro/logo.png" preload="">基础组件库
           </router-link>
         </div>
         <i class="icon icon-menu nav-icon" @click="toggleMenu"></i>
       </div>
       <div class="nav-right">
         <ul class="navbar">
-          <li><router-link :to="{ name: 'Docs' }">组件</router-link></li>
+          <li>
+            <a target="_blank" href="https://taro.aotu.io/">框架</a>
+          </li>
+          <li>
+            <router-link :to="{ name: 'Docs' }">API</router-link>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/NervJS/taro">工具</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -81,6 +88,7 @@ $header-height: 80px;
   top: 0;
   left: 0;
   width: 100%;
+  margin: 0 auto;
   height: $header-height;
   background-color: transparent;
   transition: all 0.3s;
@@ -97,7 +105,8 @@ $header-height: 80px;
 }
 .nav-container {
   margin: 0 auto;
-  width: 90%;
+  width: 1200px;
+  height: 100%;
   color: #1d1d1f;
 
   .nav-left {
@@ -108,13 +117,14 @@ $header-height: 80px;
       height: $header-height;
       line-height: $header-height;
       & > a {
+        line-height: 100px;
         display: inline-block;
         width: 300px;
-        padding-left: 90px;
-        font-size: 25px;
+        padding-left: 140px;
+        font-size: 30px;
+        font-weight: bold;
         color: #333;
         vertical-align: bottom;
-        // padding-top: 20px;
         box-sizing: border-box;
         height: 80px;
       }
@@ -122,7 +132,7 @@ $header-height: 80px;
         position: absolute;
         top: 50%;
         left: 0;
-        width: 80px;
+        width: 120px;
         transform: translateY(-50%);
       }
       span {
@@ -145,6 +155,7 @@ $header-height: 80px;
     float: right;
 
     .navbar {
+      line-height: 100px;
       display: inline-block;
       margin: 0;
       padding: 0;
@@ -156,7 +167,8 @@ $header-height: 80px;
       a {
         display: inline-block;
         color: #1d1d1f;
-
+        margin: 0 45px;
+        font-size: 18px;
         &::after {
           content: "";
           display: none;
@@ -168,7 +180,7 @@ $header-height: 80px;
           background-color: #6190e8;
         }
         &.router-link-active {
-          color: $brand-blue-500;
+          color: #0028b4;
 
           &::after {
             display: inline-block;
@@ -178,15 +190,22 @@ $header-height: 80px;
       li {
         position: relative;
         display: inline-block;
-        margin: 0 24px;
+
         cursor: pointer;
         transition: color 0.3s;
 
+        &:not(:last-child)::after {
+          right: 0;
+          content: "/";
+          position: absolute;
+          font-size: 18px;
+        }
+
         &:hover {
-          color: $brand-blue-500;
+          color: #0028b4;
 
           a {
-            color: $brand-blue-500;
+            color: #0028b4;
           }
         }
         &.disabled {
@@ -205,70 +224,11 @@ $header-height: 80px;
       transition: color 0.3s, border 0.3s;
 
       &:hover {
-        color: $brand-blue-500;
-        border-color: $brand-blue-500;
+        color: #0028b4;
+        border-color: #0028b4;
       }
     }
   }
 }
 
-@media screen and (max-width: $screen-sm-max) {
-  .page-header {
-    height: 60px;
-
-    &.open {
-      .nav-right {
-        height: 220px;
-      }
-    }
-  }
-  .nav-container {
-    width: initial;
-
-    .nav-left {
-      position: relative;
-      margin: 0 20px;
-      float: none;
-      text-align: center;
-
-      .logo {
-        display: inline-block;
-        height: 60px;
-        line-height: 60px;
-      }
-      .nav-icon {
-        display: inline-block;
-      }
-    }
-    .nav-right {
-      float: none;
-      height: 0;
-      text-align: center;
-      background-color: #fff;
-      box-shadow: 0 10px 60px 0 rgba(29, 29, 31, 0.07);
-      transition: all 0.3s;
-      overflow: hidden;
-
-      .navbar {
-        display: block;
-        height: initial;
-        line-height: 50px;
-
-        li {
-          display: block;
-        }
-        a {
-          width: 100%;
-
-          &.router-link-active::after {
-            display: none;
-          }
-        }
-      }
-      .btn-language {
-        margin: 16px;
-      }
-    }
-  }
-}
 </style>
