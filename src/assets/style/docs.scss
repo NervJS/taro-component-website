@@ -327,3 +327,23 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, .5);
     padding: 16px;
   }
 }
+
+.include-container{
+  margin-top: 40px;
+  h5{
+   font-size: 18px;
+   display: inline-block;
+  }
+  .table{
+    margin-bottom: 40px;
+  }
+  blockquote{
+    margin: 16px 0;
+    padding: 0 15px;
+    color: #C9C9C9;
+    border-left: 4px solid #ECECEC;
+    p{
+      color: #9B9B9B;
+    }
+  }
+}

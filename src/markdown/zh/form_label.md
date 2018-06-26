@@ -11,8 +11,4 @@
 ```
 :::
 
-## Label 参数
-
-| 微信小程序 | H5 | ReactNative | 属性值 | 类型 | 说明 |
-| :-: | :-: | :-: | :-: |:-: | :-: | :-: |
-| √ | √ | x | for | String | 绑定控件的 id |
+!!!include(../docs/forms/label.md)!!!

@@ -4,10 +4,10 @@
     <section class="home-container">
       <div class="right-banner"></div>
       <div class="info-box">
-        <h1 class="title">Taro</h1>
+        <h1 class="title">Taro基础组件库</h1>
         <div class="note">
-          <h4>一套遵循WeUI规范</h4>
-          <h4>使用Nerv实现的移动端基础组件库</h4>
+          <h4>为快速开发多端项目准备的</h4>
+          <h4>基于微信小程序和 WeUI 规范实现的基础组件库</h4>
         </div>
         
         <div class="btn-container">
@@ -15,16 +15,16 @@
             <a @click="toDemo" to="/zh/docs/introduction">开始使用</a>
           </div>
           <div class="btn btn-github">
-            <a href="https://github.com/NervJS/nerv-weui">Github</a>
+            <a target="_blank" href="https://github.com/NervJS/taro/tree/master/packages/taro-components">Github</a>
           </div>
         </div>
       </div>
       <section class="img-container">
         <img class="phone " src="@/assets/taro/phone.png" alt="">
         <img class="image animated fadeInUp" src="@/assets/taro/image.png" alt="">
-        <img class="web animated fadeInDown" src="@/assets/taro/web.png" alt="">
-        <img class="media animated fadeInUp" src="@/assets/taro/media.png" alt="">
-        <img class="message animated  fadeInLeft" src="@/assets/taro/message.png" alt="">
+        <img class="web animated fadeWeb" src="@/assets/taro/web.png" alt="">
+        <img class="media animated fadeMedia" src="@/assets/taro/media.png" alt="">
+        <img class="message animated fadeMessage" src="@/assets/taro/message.png" alt="">
         <img class="important" src="@/assets/taro/important.png" alt="">
         <img class="share" src="@/assets/taro/share.png" alt="">
       </section>
@@ -69,7 +69,7 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
 .img-container {
   width: 700px;
   position: absolute;
-  right: 0;
+  right: -100px;
   top: 35vh;
   background: url("../assets/taro/phone.png") no-repeat;
   background-size: contain;
@@ -79,24 +79,24 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
       top: -100px;
       right: 150px;
       z-index: 1;
-      animation-delay: 0.3s;
+      animation-delay: 0.5s;
     }
     &.web {
       top: -50px;
       left: 180px;
       z-index: 2;
-      animation-delay: 0.6s;
+      animation-delay: 1.5s;
     }
     &.media {
       top: 100px;
       right: 280px;
       z-index: 3;
-      animation-delay: 0.9s;
+      animation-delay: 2s;
     }
     &.message {
       top: -40px;
       left: 20px;
-      animation-delay: 1.5s;
+      animation-delay: 2.3s;
     }
     &.important {
       top: 320px;
@@ -116,7 +116,7 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
   top: calc(25vh + 80px);
   position: absolute;
   .title {
-    font-size: 110px;
+    font-size: 80px;
     color: #2842a2;
     font-style: italic;
     animation-delay: 2.5s;
@@ -182,108 +182,73 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
 }
 
 .animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
+  animation-duration: 0.8s;
   animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
 
   to {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
 
 .fadeInUp {
-  -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
 }
 
-@-webkit-keyframes fadeInDown {
+@keyframes fadeWeb {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    transform: translate3d(140px, 0, 0);
   }
 
   to {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes fadeInDown {
+.fadeWeb {
+  animation-name: fadeWeb;
+}
+
+@keyframes fadeMedia {
+  0% {
+    opacity: 0;
+    transform: translate3d(-60px,-130px,0);
+  }
+
+  100% {
+    opacity: 1;
+    transform:translate3d(0, 0, 0);
+  }
+}
+
+.fadeMedia {
+  animation-name: fadeMedia;
+}
+
+
+
+@keyframes fadeMessage {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    transform:  translate3d(0, 100%, 0);
   }
 
   to {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    transform:  translate3d(0, 0, 0);
   }
 }
 
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-}
-
-@-webkit-keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
+.fadeMessage {
+  animation-name: fadeMessage;
 }
 </style>

@@ -56,7 +56,7 @@ module.exports = {
               { title: "音频", name: "Media_Audio" },
               { title: "图片", name: "Media_Image" },
               { title: "视频", name: "Media_Video" },
-              // { title: "相机", name: "Media_Cammer" }
+              { title: "相机", name: "Media_Camera" }
             ]
           }
         ]

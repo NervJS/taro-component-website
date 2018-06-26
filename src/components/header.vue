@@ -20,7 +20,7 @@
             <a target="_blank" href="https://taro.aotu.io/">框架</a>
           </li>
           <li>
-            <router-link :to="{ name: 'Docs' }">API</router-link>
+            <a target="_blank" href="https://nervjs.github.io/taro/component.html">API</a>
           </li>
           <li>
             <a target="_blank" href="https://github.com/NervJS/taro">工具</a>

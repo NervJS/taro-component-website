@@ -26,7 +26,7 @@ const createLintingRule = () => ({
 const vueMarkdown = {
   preventExtract: true,
   preprocess: (MarkdownIt, source) => {
-    MarkdownIt.renderer.rules.table_open = function() {
+    MarkdownIt.renderer.rules.table_open = function () {
       return '<table class="table">'
     }
     MarkdownIt.renderer.rules.fence = utils.wrapCustomClass(
@@ -67,8 +67,15 @@ const vueMarkdown = {
       require(resolve("./build/md-include")),
       {
         basedir: resolve("./pages"),
-        filter: content => {
-          let result = content.replace(/import.*(head\/head|.scss).*(\n*)/gi, "").replace(/<Header[\s\S]*Header>(\s)*/,'')
+        filter: (content, path) => {
+          let result = content;
+          if (path.indexOf('docs') >= 0) {
+            // result = content.match(/\|.*/gi).join('\n')
+            result = `<section class='include-container'>\n\r${content.replace(/######\s*示例[\s\S]*/,'')}\n\r</section>`
+          } else {
+            result = content.replace(/import.*(head\/head|.scss).*(\n*)/gi, "").replace(/<Header[\s\S]*Header>(\s)*/, '')
+          }
+
           return result
         }
       }

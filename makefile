@@ -1,10 +1,16 @@
 # 处理 Todo 库的代码同步
 
-FOLDER_NAME = todo-temp
-TARGET_NAME = pages
+TODO_NAME = pages
+TODO_SOURCE_NAME = todo-temp
+
+DOCS_NAME = docs
+DOCS_SOURCE_NAME = docs-temp
 
 todo-clean:
-	rm -rf $(TARGET_NAME)
+	rm -rf $(TODO_NAME)
 
 copy-todo: 
-	rm -rf $(TARGET_NAME) $(FOLDER_NAME) && git clone https://github.com/NervJS/taro-components-sample.git $(FOLDER_NAME) && mv -f ./$(FOLDER_NAME)/src/pages/component/pages ./ && rm -rf $(FOLDER_NAME)
+	rm -rf $(TODO_NAME) $(TODO_SOURCE_NAME) && git clone https://github.com/NervJS/taro-components-sample.git $(TODO_SOURCE_NAME) && mv -f ./$(TODO_SOURCE_NAME)/src/pages/component/pages ./ && rm -rf $(TODO_SOURCE_NAME)
+
+copy-docs: 
+	rm -rf $(DOCS_NAME) $(DOCS_SOURCE_NAME) && git clone https://github.com/NervJS/taro.git $(DOCS_SOURCE_NAME) && mv -f ./$(DOCS_SOURCE_NAME)/docs/components/ ./$(DOCS_NAME) && rm -rf $(TODO_SOURCE_NAME)
