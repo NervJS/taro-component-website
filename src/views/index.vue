@@ -167,7 +167,7 @@ $drop-shadow: 0 4px 30px 0 rgba(223, 225, 230, 0.5);
 @media screen and (max-width: $screen-sm-max) {
   .home-container {
     height: auto;
-    margin-top: 150px;
+    margin-top: calc(80px + 10vh);
   }
   .info-box {
     text-align: center;
