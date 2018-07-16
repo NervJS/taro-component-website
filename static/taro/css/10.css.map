@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./.temp/pages/component/pages/picker/picker.scss"],"names":[],"mappings":"AAAA;AACA;AACA;AACA,4BAA4B","file":"css/10.css","sourcesContent":[".picker {\n  position: relative;\n  padding: 0.32rem 0.64rem;\n  background-color: #FFFFFF; }\n"],"sourceRoot":""}
