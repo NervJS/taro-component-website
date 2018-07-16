@@ -1,0 +1,45 @@
+.radio-list {
+  position: relative;
+  padding: 0 0.32rem;
+  background-color: #FFFFFF; }
+  .radio-list::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 0.02133rem;
+    border-top: 0.02133rem solid #e5e5e5;
+    color: #e5e5e5; }
+  .radio-list::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 0.02133rem;
+    border-top: 0.02133rem solid #e5e5e5;
+    color: #e5e5e5; }
+
+.select-box {
+  margin: 0.42667rem 0; }
+
+.radio-list__label {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0.42667rem 0.32rem; }
+  .radio-list__label:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 0.02133rem;
+    border-top: 0.02133rem solid #e5e5e5;
+    color: #e5e5e5;
+    left: 0.32rem; }
+
+.radio-list__radio {
+  width: 100%; }
+

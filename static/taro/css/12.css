@@ -1,0 +1,32 @@
+.container {
+  background-color: #f8f8f8; }
+
+.flex-wrp {
+  margin-top: 1.28rem;
+  display: -webkit-flex;
+  display: flex; }
+
+.flex-item {
+  width: 4.26667rem;
+  height: 6.4rem;
+  font-size: 0.55467rem; }
+
+.flex-item-V {
+  margin: 0 auto;
+  width: 6.4rem;
+  height: 4.26667rem; }
+
+.button_style {
+  width: 10.66667rem;
+  height: 1.70667rem;
+  line-height: 1.70667rem; }
+
+.text_content {
+  margin: 0 2.13333rem;
+  background: #fff;
+  padding: 0.85333rem 0;
+  min-height: 6.4rem;
+  text-align: center; }
+  .text_content Text {
+    display: block; }
+

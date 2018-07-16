@@ -1,0 +1,18 @@
+.flex-wrp {
+  margin-top: 1.28rem;
+  display: -webkit-flex;
+  display: flex; }
+
+.flex-item {
+  width: 4.26667rem;
+  height: 6.4rem;
+  font-size: 0.55467rem; }
+
+.flex-item-V {
+  margin: 0 auto;
+  width: 6.4rem;
+  height: 4.26667rem; }
+
+.page-section-spacing {
+  margin-top: 0.85333rem; }
+

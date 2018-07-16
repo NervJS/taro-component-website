@@ -9,8 +9,10 @@
 | √ | √ | √ | size | Number | 23 | icon 的大小，单位 px |
 | √ | √ | √ | color | Color  |    | icon 的颜色，同 css 的 color |
 
+
+
 ###### 示例：
-```
+```jsx
 <Icon size='60' type='success' />
 <Icon size='60' type='info' />
 <Icon size='60' type='warn' color='#ccc' />

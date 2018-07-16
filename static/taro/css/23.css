@@ -1,0 +1,27 @@
+.page__con__list {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 0.85333rem;
+  padding-bottom: 0.85333rem;
+  border-bottom: 0.04267rem dashed #999;
+  min-height: 2.56rem; }
+  .page__con__list icon {
+    position: absolute;
+    left: 0; }
+  .page__con__list.icon_sml icon {
+    position: absolute;
+    left: 0.85333rem;
+    top: 0.21333rem; }
+
+.icon_right {
+  margin-left: auto;
+  margin-right: auto; }
+  .icon_right_head {
+    color: #333;
+    font-size: 0.68267rem;
+    margin-bottom: 0.21333rem; }
+  .icon_right_tit {
+    color: #999;
+    font-size: 0.55467rem; }
+

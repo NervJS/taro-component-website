@@ -1,0 +1,10 @@
+.btn-max-w {
+  width: 9.81333rem; }
+
+.btn-center {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  margin: 0 auto; }
+
