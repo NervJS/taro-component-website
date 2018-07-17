@@ -11,6 +11,13 @@
             <qrcode class="qrcode-box" :value="completeUrl" :options="{ size: 150 }"></qrcode>
           </div>
         </div>
+        <div class="wxapp-container">
+          <img src="@/assets/wxapp-logo.png" alt="qrcode">
+          <div class="qrcode-modal">
+            <h6>扫描二维码查看演示效果</h6>
+            <img class="wxapp-qrcode" src="@/assets/wxapp.jpg" alt="wxapp">
+          </div>
+        </div>
         <transition name="fade" mode="out-in" @after-leave="afterLeave">
           <router-view></router-view>
         </transition>
@@ -101,7 +108,8 @@ export default {
   }
 }
 
-.qrcode-container {
+.qrcode-container,
+.wxapp-container {
   position: absolute;
   width: 25px;
   height: 25px;
@@ -113,10 +121,15 @@ export default {
     font-size: 12px;
     text-align: center;
   }
-  img {
+  & > img {
     opacity: 0.3;
     width: 100%;
     height: 100%;
+  }
+  .wxapp-qrcode {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
   &:after {
     display: none;
@@ -152,6 +165,10 @@ export default {
       display: initial;
     }
   }
+}
+
+.wxapp-container {
+  right: 80px;
 }
 
 @media screen and (max-width: $screen-sm-max) {
