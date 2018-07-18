@@ -1,3 +1,8 @@
+.components-page__body {
+  padding: 0; }
+  .components-page__body .example-body {
+    text-align: center; }
+
 .checkbox-list {
   position: relative;
   padding: 0.21333rem 0.32rem;

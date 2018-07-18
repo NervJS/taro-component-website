@@ -1,18 +1,19 @@
-.flex-wrp {
-  margin-top: 1.28rem;
-  display: -webkit-flex;
-  display: flex; }
-
-.flex-item {
-  width: 4.26667rem;
-  height: 6.4rem;
-  font-size: 0.55467rem; }
-
-.flex-item-V {
-  margin: 0 auto;
-  width: 6.4rem;
-  height: 4.26667rem; }
-
-.bg {
-  background-color: black; }
+.example {
+  margin-bottom: 1.28rem; }
+  .example-body__list {
+    display: -webkit-flex;
+    display: flex; }
+    .example-body__list-item {
+      -webkit-flex: auto;
+              flex: auto;
+      height: 6.4rem; }
+  .example-body__list--vertical {
+    width: 4.26667rem;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+    margin-left: auto;
+    margin-right: auto; }
+    .example-body__list--vertical .example-body__list-item {
+      -webkit-flex: 1 1 4.26667rem;
+              flex: 1 1 4.26667rem; }
 
