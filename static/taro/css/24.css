@@ -1,10 +1,12 @@
-.scrollview {
-  text-align: center;
-  line-height: 6.4rem;
-  color: #fff;
-  width: 12.8rem;
-  margin: 0.64rem auto 0; }
-
-.test-button {
-  width: 12.8rem; }
+.example-body {
+  height: 6.4rem; }
+  .example-body__scroll-view {
+    height: 100%;
+    white-space: nowrap; }
+    .example-body__scroll-view-item {
+      width: 100%;
+      display: inline-block;
+      height: 100%; }
+  .example-body--vertical .example-body__scroll-view-item {
+    display: block; }
 

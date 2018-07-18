@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./.temp/pages/component/pages/input/input.scss"],"names":[],"mappings":"AAAA;AACA,aAAa;;AAEb;AACA;AACA,0BAA0B","file":"css/16.css","sourcesContent":[".components-page__body {\n  padding: 0; }\n\n.components-page .example-body {\n  padding: 0.42667rem;\n  background-color: white; }\n"],"sourceRoot":""}

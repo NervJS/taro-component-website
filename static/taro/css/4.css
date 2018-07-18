@@ -1,4 +1,7 @@
-.navigator {
+.example-body {
+  text-align: center; }
+
+.example-body__navigators-item {
   height: 1.70667rem;
   line-height: 1.70667rem;
   margin: 0.42667rem 2.13333rem 0;

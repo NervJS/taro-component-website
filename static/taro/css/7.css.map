@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./.temp/pages/component/pages/textarea/textarea.scss"],"names":[],"mappings":"AAAA;AACA,aAAa;AACb;AACA,uBAAuB","file":"css/7.css","sourcesContent":[".components-page__body {\n  padding: 0; }\n  .components-page__body .example-body__button {\n    text-align: center; }\n"],"sourceRoot":""}
